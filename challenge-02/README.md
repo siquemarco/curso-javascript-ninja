@@ -28,10 +28,10 @@ function adicionar( ) {
 }
 
 // Invoque a função criada acima.
-adicionar( 20 );
+adicionar( );
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor da variável agora é 20.'
+'O valor da variável agora é 25.'
 
 /*
 Crie uma função com as seguintes características:
@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicar( a, b, c) {
-    if( a === undefined || b === undefined || c === undefined) {
+    if( a === undefined || b === undefined || c === undefined ) {
         return "Preencha todos os valores corretamente!";
     }
     
@@ -70,7 +70,22 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function tresArgs( a, b, c ) {
-    if( a === undefined && b === undefined && c === undefined ) {
+    if( a !== undefined && b === undefined && c === undefined ) {
+        return a;
+    }
+    else if( a !== undefined && b !== undefined && c === undefined ) {
+        return a + b;
+    }
+    else if (  a !== undefined && b !== undefined && c !== undefined ) {
+        return ( a + b ) / c;
+    }
+    else if (  a === undefined && b === undefined && c === undefined ) {
+        return false;
+    }
+    else {
+        return null;
+    }
+    /* if( a === undefined && b === undefined && c === undefined ) {
         return false;
     }
     if( b === undefined && c === undefined ) {
@@ -79,7 +94,7 @@ function tresArgs( a, b, c ) {
     if( c === undefined ) {
         return a + b;
     }
-    return (a + b) / c;
+    return (a + b) / c; */
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
