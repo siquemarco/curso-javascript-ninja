@@ -70,8 +70,8 @@
       }
       return acumulado + atual;
     } );
-
   }
+
   function removeLastItemOperation(number) {
     if( isLastItemAnOperation(number) ) {
       return number.slice(0, -1);
