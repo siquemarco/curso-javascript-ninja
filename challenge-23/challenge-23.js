@@ -57,16 +57,17 @@
     $visor.value = allValues.reduce( function( acumulado, atual ) {
       var firstValue = acumulado.slice(0, -1);
       var operator = acumulado.split('').pop();
-      var lastValue = atual;
+      var lastValue = removeLastItemOperation( atual );
+      var lastOperator = isLastItemAnOperation( atual ) ? atual.split('').pop() : '';
       switch (operator) {
         case '+':
-          return Number(firstValue) + Number(lastValue);
+          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
         case '-':
-          return Number(firstValue) - Number(lastValue);
+          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
         case 'x':
-          return Number(firstValue) * Number(lastValue);
+          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
         case '÷':
-          return Number(firstValue) / Number(lastValue);
+          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
       }
       return acumulado + atual;
     } );
